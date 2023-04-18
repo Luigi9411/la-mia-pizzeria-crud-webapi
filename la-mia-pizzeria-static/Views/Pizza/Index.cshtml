@@ -1,0 +1,21 @@
+﻿@model Pizza[]
+
+@{
+    ViewData["Title"] = "My pizzas";
+    var pizzas = Model;
+}
+
+@if (pizzas.Length is 0)
+{
+    <p>No post to display :\</p>
+}
+else
+{
+
+    <ul class ="d-flex  mt-3 justify-content-center" style="list-style-type:none;">
+            @foreach (var pizza in pizzas)
+            {
+                 @await Html.PartialAsync("_PizzaRow" , pizza);
+            }
+     </ul>
+}

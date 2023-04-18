@@ -1,0 +1,16 @@
+﻿@model Pizza
+
+@{
+    var pizza = Model;
+}
+
+<li class="me-4">
+    <div class="card" style="width: 18rem; height: 25rem;">
+        <img src="@pizza.Image" class="card-img-top" alt="Americana" style="height: 12rem;">
+        <div class="card-body">
+            <a class="card-title ms-lg-3" href="@Url.Action("Detail", "Pizza", new { Id = pizza.Id })">@pizza.Name</a>
+            <p class="card-text ms-lg-3">@pizza.Description</p>
+            <h6 class="ms-lg-3">@pizza.Price $</h6>
+        </div>
+    </div>
+</li>

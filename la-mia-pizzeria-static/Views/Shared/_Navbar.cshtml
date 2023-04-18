@@ -1,0 +1,25 @@
+﻿<header>
+    <h1 class="title">LA PIZZERIA</h1>
+	<nav class="navb">
+		<ul>
+			<li>
+				<button type="button" class="btn btn-secondary mt-2">
+					<a href="@Url.Action("Index", "Pizza")" class="text-black">Home</a>
+				</button>
+			</li>
+			@if (User.IsInRole("Admin"))
+			{		
+			<li>
+				<button type="button" class="btn btn-secondary mt-2">
+					<a href="@Url.Action("Create", "Pizza")" class="text-black">Crea nuova pizza</a>
+				</button>
+			</li>
+			}
+			<li>
+				@await Html.PartialAsync("_LoginPartial")
+			</li>
+		</ul>
+	</nav>
+</header>
+
+

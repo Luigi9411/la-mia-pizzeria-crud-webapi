@@ -1,0 +1,39 @@
+﻿@model Pizza
+
+
+@{
+    var pizza = Model;
+}
+
+<li class="me-4">
+    <div class="card" style="width: 18rem;">
+        <img src="@pizza.Image" class="card-img-top" alt="Americana" style="height: 12rem;">
+        <div class="card-body">
+            <h4>
+            <a class="card-title ms-lg-3" href="@Url.Action("Detail", "Pizza", new { Id = pizza.Id })">@pizza.Name</a>
+            </h4>
+            <p class="card-text ms-lg-3">@pizza.Description</p>
+            <p class ="card-text ms-lg-3">@pizza.Category!.Title</p>
+            <P class="card-text ms-lg-3">
+                Ingredienti:
+                @foreach (var Ingredient in pizza.Ingredients!)
+                {
+                    <span>@Ingredient.Name</span>
+                }
+            </P>
+            <h6 class="ms-lg-3">@pizza.Price $</h6>
+            @if (User.IsInRole("Admin"))
+            {    
+            <div class="bt">
+                <button class="btn btn-secondary mt-3">
+                    <a href="@Url.Action("Update","Pizza", new { Id = pizza.Id })" class="text-black">Edit</a>
+                </button>
+            <form asp-action="Delete" asp-controller="Pizza" asp-route-id="@pizza.Id">
+                @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-secondary mt-3 text-black">Delete</button>
+            </form>
+            </div>
+            }
+        </div>
+    </div>
+</li>

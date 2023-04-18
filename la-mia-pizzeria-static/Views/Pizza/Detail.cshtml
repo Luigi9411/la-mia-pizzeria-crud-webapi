@@ -1,0 +1,24 @@
+﻿@model Pizza
+
+@{
+    var pizza = Model;
+}
+
+<div class="d-flex justify-content-center">
+    <div  style="width: 35rem; height: 60rem;">
+            <h2 class="text-center">@pizza.Name</h2>
+        <img src="/@pizza.Image" class="card-img-top" alt="Americana" style="height: 12rem;">
+        <div class="card-body">
+            <h6>Descrizione: @pizza.Description</h6>
+            <h6 >Tipologia: @pizza.Category!.Title</h6>
+            <h6 >Ingredienti:
+                    @foreach (var Ingredient in pizza.Ingredients!)
+                    {
+                        <span>@Ingredient.Name</span>
+                    }
+            </h6>
+            <h6 >Prezzo: @pizza.Price $</h6>
+        </div>
+    </div>
+</div>
+

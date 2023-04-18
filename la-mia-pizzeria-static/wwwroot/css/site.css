@@ -1,0 +1,80 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  margin:0;
+  box-sizing:border-box
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    min-height:35rem;
+}
+
+.title {
+    text-align: center;
+    margin-left: 3rem
+}
+
+.form-field {
+    display: grid;
+    gap: 4px;
+    min-width: 400px;
+}
+
+.text.error {
+    color: red;
+    font-size: small;
+}
+
+.pad {
+    padding: 16px;
+}
+
+ul {
+    display:flex;
+    flex-wrap:wrap;
+    list-style-type:none;
+    gap: 3em
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+.navb {
+    background-color: gray;
+    height:3.5em;
+}
+
+.bt{
+    display:flex;
+    gap:3em;
+}
+
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+    margin-top:1em;
+}
+
+.btn-primary {
+    margin-top: 1em;
+}
