@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "My pizzas";
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="pad">
+        <a href="@Url.Action("ApiCreate", "Pizza")">Nuova pizza</a>
+    </div>
+}
+
+<p id="pizzas-loader">Loading pizze...</p>
+
+<p id="no-pizzas">No pizza to display :\</p>
+
+<div id="pizzas-filter">
+    <div class="form-field">
+        <label>Filtra per nome</label>
+        <input placeholder="filter" />
+    </div>
+</div>
+
+
+
+<ul id="pizza-cards" class="d-flex  mt-3 justify-content-center" style="list-style-type:none;"></ul>
+
+@section Scripts
+{
+    <script>
+        loadPizzas();
+    </script>
+}

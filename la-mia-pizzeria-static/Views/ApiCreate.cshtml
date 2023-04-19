@@ -1,0 +1,44 @@
+﻿<h2>New post</h2>
+
+<div class="container">
+	<div class="pad">
+		<form id="pizza-create-form">
+			<div class="form-field">
+				<label for="name">Nome</label>
+				<input id="name" />
+				<span id="name-errors" class="text error"></span>
+			</div>
+			<div class="form-field">
+				<label for="description">Description</label>
+				<textarea id="description"></textarea>
+				<span id="description-errors" class="text error"></span>
+			</div>
+			<div class="form-field">
+				<label for="image">Image source</label>
+				<input id="image" value="https://picsum.photos/200/300" />
+				<span id="image-errors" class="text error"></span>
+			</div>
+			<div class="form-field">
+				<label for="categoryId">Category</label>
+				<select id="categoryId">
+					<option value="0"></option>
+				</select>
+				<span id="category-id-errors" class="text error"></span>
+			</div>
+			<div class="form-field">
+				<label>Ingredients</label>
+				<div id="Ingredients"></div>
+			</div>
+			<button type="submit">Create</button>
+		</form>
+	</div>
+</div>
+
+@section Scripts
+	{
+	<script>
+		loadCategories();
+		loadIngredients();
+		initCreateForm();
+	</script>
+}

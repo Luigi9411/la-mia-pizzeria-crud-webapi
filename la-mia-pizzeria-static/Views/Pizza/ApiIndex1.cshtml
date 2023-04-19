@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "My pizzas";
+}
+
+
+    <p>No post to display :\</p>
+
+
+
+    <ul class="d-flex  mt-3 justify-content-center" style="list-style-type:none;">
+        
+            @await Html.PartialAsync("_PizzaRow" , pizza);
+        
+    </ul>
+
+@section Scripts
+    {
+    <script>
+        loadPosts();
+        initFilter();
+    </script>
+}

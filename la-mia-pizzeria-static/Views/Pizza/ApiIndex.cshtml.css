@@ -1,0 +1,19 @@
+﻿
+
+﻿#posts-table,
+#no-posts,
+#posts-filter {
+    display: none;
+}
+
+#posts-table.show {
+    display: table;
+}
+
+:is(#no-posts, #posts-filter).show {
+    display: block;
+}
+
+#posts-loader.hide {
+    display: none;
+}

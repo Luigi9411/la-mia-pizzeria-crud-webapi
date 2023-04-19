@@ -30,6 +30,26 @@ namespace la_mia_pizzeria_static.Controllers
             return View(pizzas);
         }
 
+        public IActionResult ApiIndex()
+        {
+            return View();
+        }
+
+        public IActionResult ApiCreate()
+        {
+            return View();
+        }
+
+        public IActionResult ApiEdit()
+        {
+            return View();
+        }
+
+        public IActionResult ApiDelite()
+        {
+            return View();
+        }
+
         public IActionResult Detail(int id)
         {
 
